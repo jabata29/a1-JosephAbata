@@ -3,26 +3,91 @@
   <head>
     <title>CS4241 Assignment 1</title>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="reset.css" type="text/css">
+    <link rel="stylesheet" href="myStyles.css" type="text/css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <style>
+      body { font-family: 'Open Sans', sans-serif; }
+    </style>
   </head>
+  <button class="toggle-switch button" onclick="document.body.classList.toggle('dark')">Toggle Dark Mode</button>
+
+  <header>
+    <nav>
+    <a href="#">Home</a>
+    <a href="https://fonts.google.com/selection/embed" target="_blank">Google Font Page</a>
+    <a href="#" target="_blank">External</a>
+  </nav>
+  </header>
+
   <body>
-    <h1>Information about [Your name here]</h1>
+  <div class="section-flex">
+  <section class = "boxed-text animate-text">
+    <h1> Information about Joseph Abata</h1>
     <p>
-      [Self introduction]
+      Hi, I'm Joe Abata, Class of 2026. My main interests and hobbies are climbing,
+      playing guitar, and playing video games.
     </p>
     <p>
-      [Major and other information]
+      I am a Computer Science Major!!!
     </p>
-    <p>
-      [Other things]
-    </p>
+  </section>
+
+  <section class="card-style">
+    <div class="card animate-text">
+      <h1> My favorite NBA Player</h1>
+      <p>My favorite NBA player is Lebonbon James</p>
+      <button class="button">Click Me</button>
+    </div>
+    <img class="clip-image" src="https://cdn.nba.com/headshots/nba/latest/1040x760/2544.png" alt="Lebron" />
+  </section>
+  </div>
 
     <h2>Experience</h2>
+
     <p>
-      Working experience
+      Previous Computer Science Courses:
     </p>
     <ul>
-      <li>IBM/Rational</li>
-      <li>WPI</li>
+      <li>CS 1101 - Introduction To Program Design</li>
+      <li>CS 2103 - Accelerated Object-Oriented Design Concepts</li>
+      <li>CS 2303 - Systems Programming Concepts</li>
+      <li>CS 2011 - Introduction To Machine Organization And Assembly Language</li>
+      <li>CS 2022/ MA 2201 - Discrete Mathematics</li>
+      <li>CS 2223 - Algorithms</li>
+      <li>CS 3133 - Foundations Of Computer Science</li>
+      <li>CS 3516 - Computer Networks</li>
+      <li>CS 3013 - Operating Systems</li>
+      <li>CS 3733 - Software Engineering</li>
+      <li>CS 3431 - Database Systems I</li>
     </ul>
+    <p>
+      Experience with Technologies and Methods:
+    </p>
+    <ul>
+      <li>HTML - some</li>
+      <li>CSS - some</li>
+      <li>Java - a lot</li>
+      <li>JavaScript - some</li>
+      <li>Python - some</li>
+      <li>Unit testing - some</li>
+      <li>Refactoring code - a lot</li>
+    </ul>
+
+
+    <section class="scroll-container">
+      <div class="scroll-item">Snap 1</div>
+      <div class="scroll-item">Snap 2</div>
+      <div class="scroll-item">Snap 3</div>
+    </section>
+
+    <footer>
+      <p>&copy; Jabata Inc.</p>
+    </footer>
   </body>
+
+
 </html>
