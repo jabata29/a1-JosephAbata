@@ -19,7 +19,7 @@
     <nav>
     <a href="#">Home</a>
     <a href="https://fonts.google.com/selection/embed" target="_blank">Google Font Page</a>
-    <a href="#" target="_blank">External</a>
+    <a href="https://www.espn.com/nba/player/stats/_/id/1966/lebron-james" target="_blank">Lebron Stats</a>
   </nav>
   </header>
 
@@ -40,12 +40,23 @@
     <div class="card animate-text">
       <h1> My favorite NBA Player</h1>
       <p>My favorite NBA player is Lebonbon James</p>
-      <button class="button">Click Me</button>
+      <button class="button" onclick="showImage()">Click Me</button>
     </div>
-    <img class="clip-image" src="https://cdn.nba.com/headshots/nba/latest/1040x760/2544.png" alt="Lebron" />
   </section>
   </div>
 
+  <div class="centered-div">
+    <img id="lebronImg" class="clip-image" src="https://cdn.nba.com/headshots/nba/latest/1040x760/2544.png" alt="Lebron" />
+  </div>
+
+  <script>
+    function showImage() {
+      document.getElementById("lebronImg").style.display = "block";
+    }
+  </script>
+
+  <div class="section-flex">
+    <section>
     <h2>Experience</h2>
 
     <p>
@@ -76,13 +87,55 @@
       <li>Unit testing - some</li>
       <li>Refactoring code - a lot</li>
     </ul>
-
-
-    <section class="scroll-container">
-      <div class="scroll-item">Snap 1</div>
-      <div class="scroll-item">Snap 2</div>
-      <div class="scroll-item">Snap 3</div>
     </section>
+
+  <canvas id="ballCanvas" width="500" height="400"></canvas>
+
+  <script>
+    const canvas = document.getElementById("ballCanvas");
+    const ctx = canvas.getContext("2d");
+
+    let x = canvas.width / 2;
+    let y = canvas.height / 2;
+    let radius = 20;
+    let dx = 3;
+    let dy = 2;
+    let color = "cyan";
+
+    function drawBall() {
+      ctx.beginPath();
+      ctx.arc(x, y, radius, 0, Math.PI * 2);
+      ctx.fillStyle = color;
+      ctx.fill();
+      ctx.closePath();
+    }
+
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      drawBall();
+      x += dx;
+      y += dy;
+
+      if (x + radius > canvas.width || x - radius < 0) {
+        dx = -dx;
+        color = getRandomColor();
+      }
+      if (y + radius > canvas.height || y - radius < 0) {
+        dy = -dy;
+        color = getRandomColor();
+      }
+
+      requestAnimationFrame(animate);
+    }
+
+    function getRandomColor() {
+      return `hsl(${Math.random() * 360}, 100%, 50%)`;
+    }
+
+    animate();
+  </script>
+    </div>
 
     <footer>
       <p>&copy; Jabata Inc.</p>
